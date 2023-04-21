@@ -1,7 +1,8 @@
 FROM ubuntu
 ENV PATH="/root/miniconda3/bin:${PATH}"
 
-COPY image_safetyhat.jpg requirements.txt app.py demo.py /root/
+WORKDIR /root
+COPY image_safetyhat.jpg requirements.txt server.py demo.py /root/
 
 RUN set -x; buildDeps='gcc wget ffmpeg libsm6 libxext6' \
     && apt-get update \
