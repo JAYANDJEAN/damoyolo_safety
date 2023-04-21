@@ -6,3 +6,4 @@ timm
 easydict
 flask
 pillow
+gunicorn

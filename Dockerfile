@@ -1,7 +1,7 @@
 FROM ubuntu
 ENV PATH="/root/miniconda3/bin:${PATH}"
 
-COPY * /root
+COPY image_safetyhat.jpg requirements.txt app.py demo.py /root/
 
 RUN set -x; buildDeps='gcc wget ffmpeg libsm6 libxext6' \
     && apt-get update \
@@ -16,4 +16,5 @@ RUN wget -O miniconda.sh "https://mirrors.tuna.tsinghua.edu.cn/anaconda/minicond
     && apt-get clean
 
 EXPOSE 5000
-CMD ["python", "/root/app.py"]
+#Starting the python application
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "server:app"]
