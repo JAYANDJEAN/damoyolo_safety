@@ -1,0 +1,8 @@
+modelscope
+opencv-python
+networkx
+thop
+timm
+easydict
+flask
+pillow
