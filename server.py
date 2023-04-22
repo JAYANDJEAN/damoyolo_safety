@@ -20,6 +20,7 @@ def predict():
             data["scores"] = result['scores'].tolist()
             data["labels"] = result['labels']
             data["boxes"] = result['boxes'].tolist()
+            data["size"] = image.size
             data["success"] = True
     return flask.jsonify(data)
 

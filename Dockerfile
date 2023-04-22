@@ -3,6 +3,7 @@ ENV PATH="/root/miniconda3/bin:${PATH}"
 
 WORKDIR /root
 COPY image_safetyhat.jpg requirements.txt server.py demo.py /root/
+COPY modelscope /root/.cache/modelscope
 
 RUN set -x; buildDeps='gcc wget ffmpeg libsm6 libxext6' \
     && apt-get update \
